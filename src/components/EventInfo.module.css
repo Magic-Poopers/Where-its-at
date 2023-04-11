@@ -1,49 +1,4 @@
 .eventInfo {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 4rem 0;
-}
-
-.h2 {
-  font-family: "Sansita";
-  font-style: italic;
-  font-weight: 700;
-  font-size: 2.2rem;
-  color: #f56b9a;
-}
-
-.time {
-  color: #37aeab;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-.place {
-  color: rgba(255, 255, 255, 0.7);
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1rem;
-}
-
-.eventInfoSection {
-  border: 2px solid #f56b9a;
-  border-radius: 3px;
-  margin-top: 5rem;
-}
-
-.h3 {
-  font-family: "Fira Sans";
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 2.375rem;
-  color: #ffffff;
-  text-shadow: 1px 1px 0px #f56b9a;
-  padding: 1rem;
-}
-=======
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,5 +41,3 @@
     color: #FFFFFF;
     text-shadow: 1px 1px 0px #F56B9A;
     padding: 1rem;
-}
-
