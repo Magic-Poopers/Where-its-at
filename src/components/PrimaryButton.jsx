@@ -1,7 +1,12 @@
 import React from "react";
+import styles from "./PrimaryButton.module.css";
 
-const PrimaryButton = () => {
-  return <div>PrimaryButton</div>;
+const PrimaryButton = ({ children, onClick }) => {
+  return (
+    <button type="button" className={styles.btn} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default PrimaryButton;
