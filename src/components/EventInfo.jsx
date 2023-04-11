@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./EventInfo.module.css";
 
-const EventInfo = (props) => {
+const EventInfo = ({ props }) => {
   return (
     <section className={styles.eventInfo}>
       <h2 className={styles.h2}>Lasse-Stefanz</h2>
