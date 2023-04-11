@@ -1,21 +1,28 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import Search from "../components/Search";
+import ListItem from "../components/ListItem";
 export const AllEvents = () => {
   const [eventList, setEventList] = useState([])
+  const [inputText, setInputText] = useState()
   useEffect(() =>{
       async function getEvents() {
           const response = await fetch ("https://majazocom.github.io/Data/events.json")
           let data =await response.json()
           setEventList(data.events)
-      }
-
-      getEvents()
-      console.log(eventList);
-  },[])
-return (
-<div>
-  <Search />
-  {eventList.map(event => <ListItem eventList = {event} />)}
+        }
+        
+        getEvents()
+      },[])
+  
+  function setParentInputText(text) {
+    setInputText(text)
+  }
+      return (
+        <div>
+  <Search uppdateParentInputText = {setParentInputText
+  }/>
+  {eventList.map((event, index) => <ListItem eventList = {event} key={index}/>)}
+  
 </div>
 );
 };
