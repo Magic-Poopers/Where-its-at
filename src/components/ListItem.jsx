@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListItem = () => {
+const ListItem = ({eventList}) => {
   return (
     <>
       <aside>
@@ -11,7 +11,7 @@ const ListItem = () => {
         <p>{eventList.where}</p>
         <p>{eventList.when.from}</p>
         <p>{eventList.when.to}</p>
-        <h3>{eventList.price}</h3>
+        <h3>{eventList.price}:-</h3>
       </section>
     </>
     )
