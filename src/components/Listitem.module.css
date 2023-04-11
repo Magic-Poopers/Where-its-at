@@ -1,0 +1,27 @@
+.eventContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.eventDate {
+    border: 1px solid white;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .infoContainer {
+    display: flex;
+} */
+
+.where {
+    font-style: italic;
+}
+
+.timePrice {
+    display: flex;
+    justify-content: space-between;
+}
