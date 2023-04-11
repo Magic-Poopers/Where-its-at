@@ -1,0 +1,13 @@
+.btn {
+  background: #37aeab;
+  border-radius: 3px;
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  color: #ffffff;
+  padding: 15px 54px;
+  border: none;
+}
