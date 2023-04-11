@@ -32,3 +32,5 @@ export const AllEvents = () => {
 
 )
 };
+
+export default AllEvents;
