@@ -1,0 +1,18 @@
+.eventPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.1rem;
+  gap: 2rem;
+}
+
+.paragraph {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 23px;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  color: rgba(255, 255, 255, 0.8);
+}
