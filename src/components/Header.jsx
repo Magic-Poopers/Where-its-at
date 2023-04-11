@@ -1,10 +1,10 @@
 import React from "react";
-import './Header.css';
+import styles from './Header.module.css';
 
 const Header = ({ title }) => {
 
-  return <header className="page-header">
-    <h1>{title} is the title</h1>
+  return <header className={styles.header}>
+    <h1>{title}</h1>
   </header>;
 };
 
