@@ -17,7 +17,7 @@ export const Event = () => {
   };
 
   function handleClick() {
-    // Lägg till i orderItems
+    // Lägg till i orderItems context
     // Navigera till varukorg
     console.log("Clicked!");
   }
