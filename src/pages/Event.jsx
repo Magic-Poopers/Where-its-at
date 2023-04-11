@@ -35,3 +35,5 @@ export const Event = () => {
     </main>
   );
 };
+
+export default Event;
