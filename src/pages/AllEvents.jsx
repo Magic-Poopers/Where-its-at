@@ -17,12 +17,12 @@ export const AllEvents = () => {
   function setParentInputText(text) {
     setInputText(text)
   }
+  console.log(inputText);  
       return (
         <div>
-  <Search uppdateParentInputText = {setParentInputText
-  }/>
+  <Search uppdateParentInputText = {setParentInputText}/>
   {eventList.map((event, index) => <ListItem eventList = {event} key={index}/>)}
-  
 </div>
+
 );
 };
