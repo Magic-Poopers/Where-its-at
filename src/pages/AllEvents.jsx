@@ -19,3 +19,5 @@ return (
 </div>
 );
 };
+
+export default AllEvents;

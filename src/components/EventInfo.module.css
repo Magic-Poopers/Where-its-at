@@ -47,7 +47,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   border-top: 2px solid #f56b9a;
-  font-family: 'Fria Sans', sans-serif;
+  font-family: "Fria Sans", sans-serif;
   font-size: 28px;
 }
 
@@ -62,7 +62,7 @@
   appearance: none;
   background-color: transparent;
   color: white;
-  font-family: 'Fria Sans', sans-serif;
+  font-family: "Fria Sans", sans-serif;
   font-size: 28px;
   line-height: 34px;
   border: none;
