@@ -27,9 +27,13 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: grid;
-  place-items: center;
+
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
   min-height: 100vh;
   background-color: #231f42;
 }
