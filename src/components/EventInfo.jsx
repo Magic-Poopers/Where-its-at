@@ -1,32 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./EventInfo.module.css";
 
-const EventInfo = (props) => {
+const EventInfo = ({ event }) => {
+  const [amount, setAmount] = useState(1);
+  const [totalPrice, setTotalPrice] = useState(event.price)
+
+  function increase() {
+    setAmount(prevAmount => prevAmount + 1);
+  }
+  function decrease() {
+    setAmount(prevAmount => prevAmount - 1);
+  }
+
+  useEffect(() => {
+    setTotalPrice(event.price * amount);
+  }, [amount])
+
   return (
     <section className={styles.eventInfo}>
-      <h2 className={styles.h2}>Lasse-Stefanz</h2>
-      <time className={styles.time} dateTime={``}>
-        21 mars kl 19.00-21.00
+      <h2 className={styles.h2}>{event.name}</h2>
+      <time className={styles.time} dateTime={`${event.when.date} ${event.when.from}`}>
+        {event.when.date} {event.when.from} - {event.when.to} 
       </time>
-      <address className={styles.place}>@ Kjell Härnqvistsalen</address>
+      <address className={styles.place}>@ {event.where}</address>
 
       <section className={styles.eventInfoSection}>
-        <h3 className={styles.h3}>1050 sek</h3>
-        <aside>Komponent med räknare</aside>
+        <h3 className={styles.h3}>{totalPrice} sek</h3>
+        <section className={styles.amountSection}>
+          <button className={styles.button} onClick={decrease}> - </button>
+          <aside>{amount}</aside>
+          <button className={styles.button} onClick={increase}> + </button>
+        </section>
       </section>
     </section>
   );
 };
 
 export default EventInfo;
-
-// {
-//   "name": "Lasse-Stefanz",  ->>> props.name
-//   "price": 400,             ->>> props.price
-//   "where": "Avicii arena",  ->>> props.where
-//   "when": {
-//     "date": "21 Mar",       ->>> props.when.date
-//     "from": "20.00",        ->>> props.when.from
-//     "to": "22:00"           ->>> props.when.to
-//   }
-// },
