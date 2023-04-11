@@ -5,6 +5,7 @@ export const OrderItem = ({ event }) => {
   const [clicks, setClicks] = useState(0);
   const handleAddClick = () => {
     setClicks(clicks + 1);
+    console.log("test");
   };
 
   const handleRemoveClick = () => {

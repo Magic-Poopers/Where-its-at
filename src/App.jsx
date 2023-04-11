@@ -1,6 +1,4 @@
-import "./App.css";
-import EventInfo from "./components/EventInfo";
-import Header from "./components/Header";
+
 import { Start } from "./pages/Start";
 import AllEvents from "./pages/AllEvents";
 import { Routes, Route } from "react-router-dom";
@@ -22,6 +20,7 @@ function App() {
       <Pagination />
     </div>
   );
+
 }
 
 export default App;
