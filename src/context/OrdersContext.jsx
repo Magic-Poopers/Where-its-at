@@ -10,9 +10,9 @@ export function CartProvider({ children }) {
     const existingItems = cart.find((cartItem) => cartItem.name === item.name);
     if (existingItems) {
       setCart(
-        cart.map((cartItem) => cartItem.name === item.name)
+        cart.map((cartItem) => cartItem.name === item.name
           ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-          : cartItem
+          : cartItem)
       );
     } else {
       setCart([...cart, item]);
