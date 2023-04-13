@@ -9,9 +9,9 @@ export const AllTickets = () => {
 
   // const ticketsElem = tickets.map((ticket, i) => />)
 
-  return <section>
+  return <main>
     <Ticket/>
-  </section>;
+  </main>;
 };
 
 export default AllTickets;

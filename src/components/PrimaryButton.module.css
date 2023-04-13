@@ -10,4 +10,10 @@
   color: #ffffff;
   padding: 15px 54px;
   border: none;
+  position: absolute;
+  bottom: 2.6rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
 }

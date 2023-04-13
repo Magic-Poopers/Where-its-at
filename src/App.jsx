@@ -1,3 +1,4 @@
+import './App.css';
 import { Start } from "./pages/Start";
 import AllEvents from "./pages/AllEvents";
 import { Routes, Route } from "react-router-dom";
