@@ -9,6 +9,7 @@ function Ticket({ ticket }) {
     //     message = 'Ta med vattenflaska och balla brillor.';
     // }
 
+
     return (
         <section className={styles.ticketContainer}>
 
