@@ -10,13 +10,11 @@ export const OrderItem = ({ event }) => {
   const incrementQuantity = () => {
     setQuantity(quantity + 1);
     updateQuantity(event, 1);
-    console.log('öka')
   };
 
   const decrementQuantity = () => {
     setQuantity(quantity - 1);
     updateQuantity(event, -1);
-    console.log('minska')
   };
 
   const handleAddToCartAndNavigate = () => {
