@@ -3,18 +3,22 @@ import Header from "../components/Header";
 import EventInfo from "../components/EventInfo";
 import styles from "./Event.module.css";
 import PrimaryButton from "../components/PrimaryButton";
+import { useLocation } from "react-router-dom";
 
 export const Event = () => {
-  const event = {
-    name: "Lasse-Stefanz",
-    price: 400,
-    where: "Avicii Arena",
-    when: {
-      date: "21 Mar",
-      from: "20:00",
-      to: "22:00"
-    }
-  };
+  const location = useLocation();
+  const event = location.state;
+
+  // const event = {
+  //   name: "Lasse-Stefanz",
+  //   price: 400,
+  //   where: "Avicii Arena",
+  //   when: {
+  //     date: "21 Mar",
+  //     from: "20:00",
+  //     to: "22:00",
+  //   },
+  // };
 
   function handleClick() {
     // Lägg till i orderItems context
