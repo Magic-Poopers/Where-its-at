@@ -10,36 +10,39 @@ function Ticket({ ticket }) {
     // }
 
     return (
-        <section className={styles.ticket}>
-            <section className={styles.gridSpan3}>
-                <aside>WHAT</aside>
-                <h2>Lasse-Stefanz</h2>
-            </section>
-            <section className={styles.gridSpan3}>
-                <aside>WHERE</aside>
-                <h3>Kjell Härnqvistsalen</h3>
-            </section>
-            <section className={styles.gridSpan3}>
+        <section className={styles.ticketContainer}>
+
+            <article className={styles.ticket}>
                 <section>
-                    <aside>WHEN</aside>
-                    <h4>21 mars</h4>
+                    <aside className={styles.info}>WHAT</aside>
+                    <h2 className={styles.name}>Lasse-Stefanz</h2>
                 </section>
                 <section>
-                    <aside>FROM</ aside>
-                    <h4>19.00</h4>
+                    <aside className={styles.info}>WHERE</aside>
+                    <h3 className={styles.where}>Kjell Härnqvistsalen</h3>
                 </section>
-                <section>
-                    <aside>TO</aside>
-                    <h4>21.00</h4>
+                <section className={styles.grid3col}>
+                    <section>
+                        <aside className={styles.info}>WHEN</aside>
+                        <h4 className={styles.when}>21 mars</h4>
+                    </section>
+                    <section>
+                        <aside className={styles.info}>FROM</ aside>
+                        <h4 className={styles.when}>19.00</h4>
+                    </section>
+                    <section>
+                        <aside className={styles.info}>TO</aside>
+                        <h4 className={styles.when}>21.00</h4>
+                    </section>
                 </section>
-            </section>
-            <section>
-                <aside>INFO</aside>
-                <p>{message}</p>
-            </section>
-            <section>
-                barcode
-            </section>
+                <section className={styles.message}>
+                    <aside className={styles.info}>INFO</aside>
+                    <p className={styles.p}>{message}</p>
+                </section>
+                <section className={styles.img}>
+                    <img src="./src/assets/barcode.svg" alt="" />
+                </section>
+            </article>
         </section>
     );
 }

@@ -15,6 +15,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --heading-color-main: rgba(245, 107, 154, 1);
+
 }
 
 a {
@@ -44,3 +47,4 @@ h1 {
 .active div {
   background-color: white;
 }
+

@@ -4,11 +4,11 @@ import { NavLink, Navigate } from "react-router-dom";
 
 const Pagination = () => {
   return (
-    <navbar className={styles.paginationContainer}>
+    <nav className={styles.paginationContainer}>
       <NavLink to='/'><div className={styles.circle}></div></NavLink>
       <NavLink to='/events'><div className={styles.circle}></div></NavLink>
       <NavLink to='/sendorder'><div className={styles.circle}></div></NavLink>
-    </navbar>
+    </nav>
   );
 };
 
