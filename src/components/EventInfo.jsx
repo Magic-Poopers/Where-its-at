@@ -1,22 +1,42 @@
 import React, { useEffect, useState } from "react";
 import styles from "./EventInfo.module.css";
 import { useCart } from "../context/OrdersContext";
+import { useNavigate } from "react-router-dom";
+import PrimaryButton from "./PrimaryButton";
 
-const EventInfo = ({ event, setParentQuantity }) => {
-  const { updateQuanity, cart } = useCart();
+const EventInfo = ({ event }) => {
+  const navigate = useNavigate();
+  const { addItemToCart, updateQuantity, cart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(event.price);
+  // const [totalPrice, setTotalPrice] = useState(event.price);
 
-  useEffect(() => {
-    setParentQuantity(quantity)
- }, [quantity]);
+  const addToCart = () => {
+    addItemToCart({ ...event, quantity });
+  };
 
-  function increase() {
-    setQuantity((prevAmount) => prevAmount + 1);
-  }
-  function decrease() {
-    setQuantity((prevAmount) => prevAmount - 1);
-  }
+  const incrementQuantity = () => {
+    setQuantity(quantity + 1);
+    updateQuantity(event, 1);
+  };
+
+  const decrementQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+      updateQuantity(event, -1);
+    }
+  };
+
+  const handleAddToCartAndNavigate = () => {
+    addToCart();
+    navigate("/sendorder");
+  };
+
+  // const calculateTotal = () => {
+  //   return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  // };
+
+  console.log("test");
 
   useEffect(() => {
     setTotalPrice(event.price * quantity);
@@ -36,17 +56,21 @@ const EventInfo = ({ event, setParentQuantity }) => {
       <section className={styles.eventInfoSection}>
         <h3 className={styles.h3}>{totalPrice} sek</h3>
         <section className={styles.amountSection}>
-          <button className={styles.button} onClick={decrease}>
+          <button className={styles.button} onClick={decrementQuantity}>
             {" "}
             -{" "}
           </button>
           <aside>{quantity}</aside>
-          <button className={styles.button} onClick={increase}>
+          <button className={styles.button} onClick={incrementQuantity}>
             {" "}
             +{" "}
           </button>
         </section>
       </section>
+      <PrimaryButton
+        children={"Lägg i varukorg"}
+        onClick={handleAddToCartAndNavigate}
+      />
     </section>
   );
 };

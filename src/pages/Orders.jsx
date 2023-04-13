@@ -3,23 +3,19 @@ import styles from "./Orders.module.css";
 import { OrderItem } from "../components/OrderItem";
 import PrimaryButton from "../components/PrimaryButton";
 import Header from "../components/Header";
+import { useCart } from "../context/OrdersContext";
 
 const Orders = () => {
-  const concerts = [
-    {
-      name: "Concert 1",
-      date: "2023-04-11"
-    },
-    {
-      name: "Concert 2",
-      date: "2023-04-11"
-    }
-  ];
+  const { cart, updateQuantity } = useCart();
+  const calculateTotal = () => {
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
   const handleClick = () => {
     console.log("Clicked");
   };
 
-  const items = concerts.map((concert, index) => {
+  const items = cart.map((concert, index) => {
     return <OrderItem event={concert} key={index} />;
   });
   return (
@@ -27,7 +23,7 @@ const Orders = () => {
       <Header title={"Order"} />
       {items}
       <p className={styles.total}>Totalt värde på order</p>
-      <p className={styles.price}>1310 sek </p>
+      <p className={styles.price}>{calculateTotal()} sek</p>
       <PrimaryButton onClick={handleClick}>Skicka order</PrimaryButton>
     </div>
   );
