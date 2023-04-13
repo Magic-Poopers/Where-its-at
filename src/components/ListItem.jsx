@@ -1,19 +1,20 @@
 import React from "react";
-
+import styles from "./Listitem.module.css"
 const ListItem = ({eventList}) => {
   return (
-    <>
-      <aside>
+    <div className={styles.eventContainer}>
+      <aside className={styles.eventDate}>
         <p>{eventList.when.date}</p>
       </aside>
-      <section>
-        <h2>{eventList.name}</h2>
-        <p>{eventList.where}</p>
-        <p>{eventList.when.from}</p>
-        <p>{eventList.when.to}</p>
+      <section  className={styles.infoContainer}>
+        <h3>{eventList.name}</h3>
+        <p className={styles.where}>{eventList.where}</p>
+      <aside className={styles.timePrice}>
+        <p>{eventList.when.from}-{eventList.when.to}</p>
         <h3>{eventList.price}:-</h3>
+      </aside>
       </section>
-    </>
+    </div>
     )
 };
 
