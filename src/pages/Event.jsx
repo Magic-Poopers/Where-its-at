@@ -10,7 +10,7 @@ export const Event = () => {
   const location = useLocation();
   const event = location.state;
   const { addItemToCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState();
 
   // const event = {
   //   name: "Lasse-Stefanz",
@@ -30,6 +30,10 @@ export const Event = () => {
     console.log(newObj);
   }
 
+  function setParentQuantity(amount) {
+   setQuantity(amount)
+  }
+
   return (
     <main className={styles.eventPage}>
       <section>
@@ -38,7 +42,7 @@ export const Event = () => {
           You are about to score some tickets to
         </p>
       </section>
-      <EventInfo event={event} />
+      <EventInfo event={event} setParentQuantity={setParentQuantity} />
       <PrimaryButton children={"Lägg i varukorg"} onClick={handleClick} />
     </main>
   );

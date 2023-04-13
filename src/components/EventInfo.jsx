@@ -2,10 +2,14 @@ import React, { useEffect, useState } from "react";
 import styles from "./EventInfo.module.css";
 import { useCart } from "../context/OrdersContext";
 
-const EventInfo = ({ event }) => {
+const EventInfo = ({ event, setParentQuantity }) => {
   const { updateQuanity, cart } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(event.price);
+
+  useEffect(() => {
+    setParentQuantity(quantity)
+ }, [quantity]);
 
   function increase() {
     setQuantity((prevAmount) => prevAmount + 1);
