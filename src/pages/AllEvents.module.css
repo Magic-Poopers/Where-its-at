@@ -1,0 +1,8 @@
+.allEventsPage {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.1rem;
+  gap: 2rem;
+}

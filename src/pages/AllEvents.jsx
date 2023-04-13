@@ -3,6 +3,7 @@ import Search from "../components/Search";
 import ListItem from "../components/ListItem";
 import Header from "../components/Header";
 import { Link } from "react-router-dom";
+import styles from "./AllEvents.module.css";
 
 export const AllEvents = () => {
   const [eventList, setEventList] = useState([]);
@@ -25,7 +26,7 @@ export const AllEvents = () => {
   }
 
   return (
-    <div>
+    <div className={styles.allEventsPage}>
       <Header title={"Events"} />
       <Search uppdateParentInputText={setParentInputText} />
       {eventList.map((event, index) =>
