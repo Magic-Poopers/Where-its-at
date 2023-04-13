@@ -6,10 +6,9 @@ import PrimaryButton from "./PrimaryButton";
 
 const EventInfo = ({ event }) => {
   const navigate = useNavigate();
-  const { addItemToCart, updateQuantity, cart } = useCart();
+  const { addItemToCart, updateQuantity } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(event.price);
-  // const [totalPrice, setTotalPrice] = useState(event.price);
 
   const addToCart = () => {
     addItemToCart({ ...event, quantity });
@@ -31,12 +30,6 @@ const EventInfo = ({ event }) => {
     addToCart();
     navigate("/sendorder");
   };
-
-  // const calculateTotal = () => {
-  //   return cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  // };
-
-  console.log("test");
 
   useEffect(() => {
     setTotalPrice(event.price * quantity);

@@ -4,33 +4,28 @@ import { useCart } from "../context/OrdersContext";
 import { useNavigate } from "react-router-dom";
 export const OrderItem = ({ event }) => {
   const navigate = useNavigate();
-  const { addItemToCart, updateQuantity, cart } = useCart();
+  const { addItemToCart, updateQuantity, cart, removeItem } = useCart();
   const [quantity, setQuantity] = useState(1);
   const incrementQuantity = () => {
-    setQuantity(quantity + 1);
     updateQuantity(event, 1);
   };
 
   const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
+    if (event.quantity > 1) {
       updateQuantity(event, -1);
+    } else {
+      removeItem(event);
     }
   };
 
-  const handleAddToCartAndNavigate = () => {
-    addToCart();
-    navigate("/sendorder");
-  };
-
-  // const calculateTotal = () => {
-  //   return cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  // };
   return (
     <div className={styles.card}>
       <div className={styles.eventContainer}>
         <h2 className={styles.eventName}>{event.name}</h2>
-        <p className={styles.eventDate}>{event.when.date}</p>
+        <p className={styles.eventDate}>
+          {" "}
+          {event.when.date} kl {event.when.from} - {event.when.to}
+        </p>
       </div>
 
       <div className={styles.btnContainer}>
