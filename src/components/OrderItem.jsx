@@ -6,16 +6,17 @@ export const OrderItem = ({ event }) => {
   const navigate = useNavigate();
   const { addItemToCart, updateQuantity, cart } = useCart();
   const [quantity, setQuantity] = useState(1);
+
   const incrementQuantity = () => {
     setQuantity(quantity + 1);
     updateQuantity(event, 1);
+    console.log('öka')
   };
 
   const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-      updateQuantity(event, -1);
-    }
+    setQuantity(quantity - 1);
+    updateQuantity(event, -1);
+    console.log('minska')
   };
 
   const handleAddToCartAndNavigate = () => {
