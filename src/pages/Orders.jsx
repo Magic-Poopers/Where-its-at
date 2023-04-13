@@ -23,7 +23,7 @@ const Orders = () => {
       <Header title={"Order"} />
       {items}
       <p className={styles.total}>Totalt värde på order</p>
-      <p className={styles.price}>{calculateTotal()} Sek</p>
+      <p className={styles.price}>{calculateTotal()} sek</p>
       <PrimaryButton onClick={handleClick}>Skicka order</PrimaryButton>
     </div>
   );
