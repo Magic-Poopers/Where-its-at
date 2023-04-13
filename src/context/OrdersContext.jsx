@@ -19,7 +19,23 @@ export function CartProvider({ children }) {
     }
   };
 
-  const value = { cart, addItemToCart };
+  const updateQuanity = (item, change) => {
+    setCart(
+      cart.reduce((newCart, cartItem) => {
+        if (cartItem.name === item.name) {
+          const newQuantity = cartItem.quantity + change;
+          if (newQuantity > 0) {
+            newCart.push({ ...cartItem, quantity: newQuantity });
+          } else {
+            newCart.push(cartItem);
+          }
+          return newCart;
+        }
+      }, [])
+    );
+  };
+
+  const value = { cart, addItemToCart, updateQuanity };
   return (
     <OrdersContext.Provider value={value}>{children}</OrdersContext.Provider>
   );

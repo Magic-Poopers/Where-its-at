@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react";
 import styles from "./EventInfo.module.css";
+import { useCart } from "../context/OrdersContext";
 
 const EventInfo = ({ event }) => {
-  const [amount, setAmount] = useState(1);
+  const { updateQuanity, cart } = useCart();
+  const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(event.price);
 
   function increase() {
-    setAmount((prevAmount) => prevAmount + 1);
+    setQuantity((prevAmount) => prevAmount + 1);
   }
   function decrease() {
-    setAmount((prevAmount) => prevAmount - 1);
+    setQuantity((prevAmount) => prevAmount - 1);
   }
 
   useEffect(() => {
-    setTotalPrice(event.price * amount);
-  }, [amount]);
+    setTotalPrice(event.price * quantity);
+  }, [quantity]);
 
   return (
     <section className={styles.eventInfo}>
@@ -34,7 +36,7 @@ const EventInfo = ({ event }) => {
             {" "}
             -{" "}
           </button>
-          <aside>{amount}</aside>
+          <aside>{quantity}</aside>
           <button className={styles.button} onClick={increase}>
             {" "}
             +{" "}

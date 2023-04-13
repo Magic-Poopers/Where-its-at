@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import EventInfo from "../components/EventInfo";
 import styles from "./Event.module.css";
 import PrimaryButton from "../components/PrimaryButton";
 import { useLocation } from "react-router-dom";
+import { useCart } from "../context/OrdersContext";
 
 export const Event = () => {
   const location = useLocation();
   const event = location.state;
+  const { addItemToCart } = useCart();
+  const [quantity, setQuantity] = useState(1);
 
   // const event = {
   //   name: "Lasse-Stefanz",
@@ -21,9 +24,10 @@ export const Event = () => {
   // };
 
   function handleClick() {
-    // Lägg till i orderItems context
-    // Navigera till varukorg
-    console.log("Clicked!");
+    const newObj = { ...event, quantity };
+    addItemToCart(newObj);
+
+    console.log(newObj);
   }
 
   return (
