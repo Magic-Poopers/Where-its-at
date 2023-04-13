@@ -51,7 +51,7 @@ export function CartProvider({ children }) {
 
     }
 
-    const value = { cart, addItemToCart, updateQuantity };
+    const value = { cart, addItemToCart, updateQuantity, setCart };
     return (
         <OrdersContext.Provider value={value}>{children}</OrdersContext.Provider>
     );
