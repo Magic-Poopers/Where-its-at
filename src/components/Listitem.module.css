@@ -1,27 +1,54 @@
 .eventContainer {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    color: white;
+    width: 310px;
+}
+
+.infoContainer {
+    margin-right: auto;
+    margin-left: auto;
+    width: 219px;
+}
+
+.name {
+    font-size: 22px;
+    text-shadow: 1px 1px #F56B9A;
 }
 
 .eventDate {
     border: 1px solid white;
-    width: 3rem;
-    height: 3rem;
+    border-radius: 3px;
+    font-size: 10px;
+    width: 66px;
+    height: 66px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    
 }
-
-/* .infoContainer {
-    display: flex;
-} */
 
 .where {
     font-style: italic;
+    font-size: 12px;
+    opacity: 80%;
 }
 
 .timePrice {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+.time {
+    font-size: 14px;
+    color: #D0D0D0;
+}
+
+.price {
+    font-size: 17px;
+    color: #37AEAB;
+}
+
