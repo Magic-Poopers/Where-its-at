@@ -36,6 +36,8 @@ const EventInfo = ({ event }) => {
   //   return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   // };
 
+  console.log("test");
+
   useEffect(() => {
     setTotalPrice(event.price * quantity);
   }, [quantity]);
