@@ -10,16 +10,18 @@ export function CartProvider({ children }) {
     const existingItems = cart.find((cartItem) => cartItem.name === item.name);
     if (existingItems) {
       setCart(
-        cart.map((cartItem) => cartItem.name === item.name
-          ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-          : cartItem)
+        cart.map((cartItem) =>
+          cartItem.name === item.name
+            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
+            : cartItem
+        )
       );
     } else {
       setCart([...cart, item]);
     }
   };
 
-  const updateQuanity = (item, change) => {
+  const updateQuantity = (item, change) => {
     setCart(
       cart.reduce((newCart, cartItem) => {
         if (cartItem.name === item.name) {
@@ -35,7 +37,7 @@ export function CartProvider({ children }) {
     );
   };
 
-  const value = { cart, addItemToCart, updateQuanity };
+  const value = { cart, addItemToCart, updateQuantity };
   return (
     <OrdersContext.Provider value={value}>{children}</OrdersContext.Provider>
   );
