@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import EventInfo from "../components/EventInfo";
 import styles from "./Event.module.css";
-import PrimaryButton from "../components/PrimaryButton";
-import { useLocation, useNavigate } from "react-router-dom";
-import { useCart } from "../context/OrdersContext";
+import { useLocation } from "react-router-dom";
 
 export const Event = () => {
   const location = useLocation();
   const event = location.state;
-  const { addItemToCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
 
   return (
     <main className={styles.eventPage}>
@@ -21,7 +17,6 @@ export const Event = () => {
         </p>
       </section>
       <EventInfo event={event} />
-      {/* <PrimaryButton children={"Lägg i varukorg"} onClick={handleClick} /> */}
     </main>
   );
 };
