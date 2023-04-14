@@ -47,7 +47,7 @@ const EventInfo = ({ event }) => {
       <address className={styles.place}>@ {event.where}</address>
 
       <section className={styles.eventInfoSection}>
-        <h3 className={styles.h3}>{totalPrice}sek</h3>
+        <h3 className={styles.h3}>{totalPrice} sek</h3>
         <section className={styles.amountSection}>
           <button className={styles.button} onClick={decrementQuantity}>
             {" "}
