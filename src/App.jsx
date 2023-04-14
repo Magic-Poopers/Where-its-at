@@ -1,7 +1,9 @@
 import './App.css';
 import { Start } from "./pages/Start";
+import { useState } from "react";
 import AllEvents from "./pages/AllEvents";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import Event from "./pages/Event";
 import Orders from "./pages/Orders";
 import AllTickets from "./pages/AllTickets";
