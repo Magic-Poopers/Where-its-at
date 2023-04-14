@@ -4,6 +4,7 @@ import { OrderItem } from "../components/OrderItem";
 import PrimaryButton from "../components/PrimaryButton";
 import Header from "../components/Header";
 import { useCart } from "../context/OrdersContext";
+import { NavLink } from "react-router-dom";
 
 const Orders = () => {
   const { cart, updateQuantity } = useCart();
@@ -26,7 +27,9 @@ const Orders = () => {
       {items}
       <p className={styles.total}>Totalt värde på order</p>
       <p className={styles.price}>{calculateTotal()} sek</p>
-      <PrimaryButton onClick={handleClick}>Skicka order</PrimaryButton>
+      <NavLink to='/tickets' state={cart}>
+        <PrimaryButton onClick={handleClick}>Skicka order</PrimaryButton>
+      </NavLink>
     </div>
   );
 };

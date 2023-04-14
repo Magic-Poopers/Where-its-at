@@ -2,10 +2,18 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  width: 25%;
+
+  position: absolute;
+  margin: auto;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
 }
+
 .circle {
   height: 8px;
   width: 8px;
   border-radius: 100px;
-  background: #ffffff;
+  background: #ffffff61;
 }

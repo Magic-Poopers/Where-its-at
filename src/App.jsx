@@ -1,3 +1,4 @@
+import './App.css';
 import { Start } from "./pages/Start";
 import { useState } from "react";
 import AllEvents from "./pages/AllEvents";

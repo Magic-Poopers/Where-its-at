@@ -1,0 +1,64 @@
+.ticketContainer {
+    padding: 3rem 2rem;
+}
+
+.ticket {
+    background-color: rgb(214, 214, 214);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    border-radius: 4px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.447);
+}
+
+.info {
+    font-family: 'Fira Sans';
+    font-weight: 600;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.4);
+    border-top: 2px dotted rgba(0, 0, 0, 0.263);
+    padding-top: .5rem;
+}
+
+.name {
+    font-family: 'Sansita';
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--heading-color-main);
+    padding-bottom: 2rem;
+}
+
+.grid3col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.where {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 1rem;
+}
+
+.when {
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.message {
+    padding-bottom: 2rem;
+}
+
+.p {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.img {
+    margin: auto;
+}
