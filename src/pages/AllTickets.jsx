@@ -7,7 +7,7 @@ import styles from "./AllTickets.module.css";
 import Header from "../components/Header";
 const AllTickets = () => {
   const { purchasedItems } = useCart();
-
+  console.log("ss");
   let cartItems = purchasedItems.map((item, index) => (
     <article key={index} className={styles.container}>
       <h3>
@@ -19,6 +19,7 @@ const AllTickets = () => {
           {item.when.date} {item.when.from} - {item.when.to}
         </span>
       </p>
+
       <p>Place: {item.where}</p>
       <p>Quantity: {item.quantity}</p>
       <p>Price per ticket: {item.price} sek</p>
