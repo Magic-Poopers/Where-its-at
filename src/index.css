@@ -17,11 +17,11 @@
   -webkit-text-size-adjust: 100%;
 
   --heading-color-main: rgba(245, 107, 154, 1);
-
 }
 
 a {
-  text-decoration: inherit;
+  text-decoration: none;
+  color: #f56b9a;
 }
 
 body {
@@ -47,4 +47,3 @@ h1 {
 .active div {
   background-color: white;
 }
-

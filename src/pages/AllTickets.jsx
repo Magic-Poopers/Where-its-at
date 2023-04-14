@@ -2,19 +2,43 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import ListItem from "../components/ListItem";
 import Ticket from "../components/Ticket";
+import { useCart } from "../context/OrdersContext";
+import styles from "./AllTickets.module.css";
+import Header from "../components/Header";
+const AllTickets = () => {
+  const { cart } = useCart();
 
-export const AllTickets = () => {
-  const location = useLocation();
-  const tickets = location.state;
-  // Can use props instead?
+  let cartItems = cart.map((item, index) => (
+    <article key={index} className={styles.container}>
+      <h3>
+        <Link to={`/ticket/${index}`}>{item.name}</Link>
+      </h3>
+      <p>
+        Date:{" "}
+        <span className={styles.date}>
+          {item.when.date} {item.when.from} - {item.when.to}
+        </span>
+      </p>
+      <p>Place: {item.where}</p>
+      <p>Quantity: {item.quantity}</p>
+      <p>Price per ticket: {item.price} sek</p>
+      <p>Total: {item.price * item.quantity} Sek</p>
+      <hr />
+    </article>
+  ));
 
-  const ticketsElem = tickets.map((ticket, i) => <Link key={i}><li>{ticket.name}</li></Link>)
-
-  return <main>
-    <ul>
-      {tickets.length ? ticketsElem : <p>No tickets here...</p>}
-    </ul>
-  </main>;
+  return (
+    <div>
+      <Header title={"Your Purchased Tickets"} />
+      {cart.length ? (
+        cartItems
+      ) : (
+        <p className={styles.noTickets}>
+          You havent purchased any tickets yet!
+        </p>
+      )}
+    </div>
+  );
 };
 
 export default AllTickets;

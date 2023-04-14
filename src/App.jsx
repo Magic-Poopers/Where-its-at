@@ -1,4 +1,4 @@
-import './App.css';
+import "./App.css";
 import { Start } from "./pages/Start";
 import { useState } from "react";
 import AllEvents from "./pages/AllEvents";
@@ -9,6 +9,7 @@ import Orders from "./pages/Orders";
 import AllTickets from "./pages/AllTickets";
 import Pagination from "./components/Pagination";
 import { CartProvider } from "./context/OrdersContext";
+import Ticket from "./components/Ticket";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/addtocart" element={<Event />}></Route>
           <Route path="/sendorder" element={<Orders />}></Route>
           <Route path="/tickets" element={<AllTickets />}></Route>
+          <Route path="/ticket/:index" element={<Ticket />}></Route>
         </Routes>
         <Pagination />
       </div>
