@@ -4,10 +4,10 @@ import { OrderItem } from "../components/OrderItem";
 import PrimaryButton from "../components/PrimaryButton";
 import Header from "../components/Header";
 import { useCart } from "../context/OrdersContext";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
-  const { cart, updateQuantity, copyTickets } = useCart();
+  const { cart, copyTickets } = useCart();
   const navigate = useNavigate();
 
   const calculateTotal = () => {

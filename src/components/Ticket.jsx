@@ -41,7 +41,7 @@ function Ticket() {
           </section>
           <section className={styles.img}>
             <img src={Barcode} alt="" />
-            <h3>Ticket {i + 1}</h3>
+            <h4>Ticket {i + 1}</h4>
           </section>
         </article>
       </section>

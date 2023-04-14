@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./OrderItem.module.css";
 import { useCart } from "../context/OrdersContext";
-import { useNavigate } from "react-router-dom";
 export const OrderItem = ({ event }) => {
-  const navigate = useNavigate();
-  const { addItemToCart, updateQuantity, cart, removeItem } = useCart();
-  const [quantity, setQuantity] = useState(1);
+  const { updateQuantity, removeItem } = useCart();
   const incrementQuantity = () => {
     updateQuantity(event, 1);
   };
