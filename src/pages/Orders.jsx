@@ -7,16 +7,18 @@ import { useCart } from "../context/OrdersContext";
 
 const Orders = () => {
   const { cart, updateQuantity } = useCart();
-  const calculateTotal = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  };
 
+  const calculateTotal = () => {
+    return cart
+      ? cart.reduce((total, item) => total + item.price * item.quantity, 0)
+      : 0;
+  };
   const handleClick = () => {
     console.log("Clicked");
   };
 
-  const items = cart.map((concert, index) => {
-    return <OrderItem event={concert} key={index} />;
+  const items = cart.map((item, index) => {
+    return <OrderItem event={item} key={index} />;
   });
   return (
     <div className={styles.container}>
