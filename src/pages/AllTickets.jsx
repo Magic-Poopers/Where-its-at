@@ -6,9 +6,9 @@ import { useCart } from "../context/OrdersContext";
 import styles from "./AllTickets.module.css";
 import Header from "../components/Header";
 const AllTickets = () => {
-  const { cart } = useCart();
-
-  let cartItems = cart.map((item, index) => (
+  const { purchasedItems } = useCart();
+  console.log("ss");
+  let cartItems = purchasedItems.map((item, index) => (
     <article key={index} className={styles.container}>
       <h3>
         <Link to={`/ticket/${index}`}>{item.name}</Link>
@@ -19,10 +19,11 @@ const AllTickets = () => {
           {item.when.date} {item.when.from} - {item.when.to}
         </span>
       </p>
+
       <p>Place: {item.where}</p>
       <p>Quantity: {item.quantity}</p>
       <p>Price per ticket: {item.price} sek</p>
-      <p>Total: {item.price * item.quantity} Sek</p>
+      <p>Total: {item.price * item.quantity} sek</p>
       <hr />
     </article>
   ));
@@ -30,7 +31,7 @@ const AllTickets = () => {
   return (
     <div>
       <Header title={"Your Purchased Tickets"} />
-      {cart.length ? (
+      {purchasedItems.length ? (
         cartItems
       ) : (
         <p className={styles.noTickets}>

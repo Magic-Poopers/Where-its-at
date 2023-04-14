@@ -7,7 +7,7 @@ import { useCart } from "../context/OrdersContext";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Orders = () => {
-  const { cart, updateQuantity } = useCart();
+  const { cart, updateQuantity, copyTickets } = useCart();
   const navigate = useNavigate();
 
   const calculateTotal = () => {
@@ -16,6 +16,7 @@ const Orders = () => {
       : 0;
   };
   const handleClick = () => {
+    copyTickets();
     navigate("/tickets");
   };
 
