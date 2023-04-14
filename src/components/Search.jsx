@@ -8,6 +8,7 @@ const Search = ({ uppdateParentInputText }) => {
     uppdateParentInputText(inputText);
   }, [inputText]);
 
+  const searchIcon = <i class="fa-solid fa-magnifying-glass"></i>;
   return (
     <div>
       <input
