@@ -6,8 +6,8 @@ import Barcode from "../assets/barcode.svg";
 function Ticket() {
   let message = "Ta hand om varandra!";
   const { index } = useParams();
-  const { cart } = useCart();
-  const event = cart[parseInt(index)];
+  const { purchasedItems } = useCart();
+  const event = purchasedItems[parseInt(index)];
 
   const generateTicketsForEvent = (event) => {
     return Array.from({ length: event.quantity }).map((_, i) => (

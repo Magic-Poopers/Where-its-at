@@ -5,6 +5,7 @@ export const useCart = () => useContext(OrdersContext);
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
+  const [purchasedItems, setPurchasedItems] = useState([]);
 
   const addItemToCart = (item) => {
     const existingItems = cart.find((cartItem) => cartItem.name === item.name);
@@ -21,6 +22,14 @@ export function CartProvider({ children }) {
     }
   };
 
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const copyTickets = () => {
+    setPurchasedItems([...purchasedItems, ...cart]);
+    clearCart();
+  };
   const updateQuantity = (item, change) => {
     setCart((prevCart) => {
       const updatedCart = prevCart.map((cartItem) => {
@@ -44,9 +53,12 @@ export function CartProvider({ children }) {
 
   const value = {
     cart,
+    copyTickets,
+    purchasedItems,
     addItemToCart,
     updateQuantity,
-    removeItem
+    removeItem,
+    clearCart
   };
   return (
     <OrdersContext.Provider value={value}>{children}</OrdersContext.Provider>
