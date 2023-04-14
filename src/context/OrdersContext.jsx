@@ -21,6 +21,8 @@ export function CartProvider({ children }) {
     }
   };
 
+  console.log("");
+
   const updateQuantity = (item, change) => {
     setCart((prevCart) => {
       const updatedCart = prevCart.map((cartItem) => {
