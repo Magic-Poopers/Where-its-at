@@ -26,12 +26,12 @@ const AllTickets = () => {
   ));
 
   return (
-    <div>
+    <div className={styles.ticketsContainer}>
       <Header title={"Your Purchased Tickets"} />
       {purchasedItems.length ? (
         cartItems
       ) : (
-        <p className={styles.noTickets}>
+        <p className={styles.paragraph}>
           You havent purchased any tickets yet!
         </p>
       )}

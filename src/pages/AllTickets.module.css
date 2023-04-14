@@ -2,6 +2,10 @@
   padding: 1rem;
 }
 
+.ticketsContainer {
+  padding: 2.1rem;
+}
+
 .date {
   font-size: 1rem;
   color: #37aeab;
@@ -14,4 +18,15 @@
 
 h3 {
   color: #f56b9a;
+}
+
+.paragraph {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 23px;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  color: rgba(255, 255, 255, 0.8);
 }
