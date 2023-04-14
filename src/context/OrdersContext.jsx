@@ -21,24 +21,6 @@ export function CartProvider({ children }) {
     }
   };
 
-  // const updateQuantity = (item, change) => {
-  //   if (!cart) return;
-
-  //   setCart(
-  //     cart.reduce((newCart, cartItem) => {
-  //       if (cartItem.name === item.name) {
-  //         const newQuantity = cartItem.quantity + change;
-  //         if (newQuantity > 0) {
-  //           newCart.push({ ...cartItem, quantity: newQuantity });
-  //         }
-  //       } else {
-  //         newCart.push(cartItem);
-  //       }
-  //       return newCart;
-  //     }, [])
-  //   );
-  // };
-
   const updateQuantity = (item, change) => {
     setCart((prevCart) => {
       const updatedCart = prevCart.map((cartItem) => {
@@ -60,7 +42,12 @@ export function CartProvider({ children }) {
     );
   };
 
-  const value = { cart, addItemToCart, updateQuantity, removeItem };
+  const value = {
+    cart,
+    addItemToCart,
+    updateQuantity,
+    removeItem
+  };
   return (
     <OrdersContext.Provider value={value}>{children}</OrdersContext.Provider>
   );

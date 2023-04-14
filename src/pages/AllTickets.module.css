@@ -1,0 +1,13 @@
+.container {
+  padding: 1rem;
+}
+
+.date {
+  font-size: 1rem;
+  color: #37aeab;
+}
+
+.noTickets {
+  margin-top: 4rem;
+  text-align: center;
+}

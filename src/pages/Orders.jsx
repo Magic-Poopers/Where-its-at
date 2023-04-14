@@ -4,10 +4,11 @@ import { OrderItem } from "../components/OrderItem";
 import PrimaryButton from "../components/PrimaryButton";
 import Header from "../components/Header";
 import { useCart } from "../context/OrdersContext";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const Orders = () => {
   const { cart, updateQuantity } = useCart();
+  const navigate = useNavigate();
 
   const calculateTotal = () => {
     return cart
@@ -15,7 +16,7 @@ const Orders = () => {
       : 0;
   };
   const handleClick = () => {
-    console.log("Clicked");
+    navigate("/tickets");
   };
 
   const items = cart.map((item, index) => {
@@ -27,9 +28,7 @@ const Orders = () => {
       {items}
       <p className={styles.total}>Totalt värde på order</p>
       <p className={styles.price}>{calculateTotal()} sek</p>
-      <NavLink to='/tickets' state={cart}>
-        <PrimaryButton onClick={handleClick}>Skicka order</PrimaryButton>
-      </NavLink>
+      <PrimaryButton onClick={handleClick}>Skicka order</PrimaryButton>
     </div>
   );
 };
