@@ -18,3 +18,7 @@
   width: fit-content;
   cursor: pointer;
 }
+
+.disabled {
+  opacity: .3;
+}
